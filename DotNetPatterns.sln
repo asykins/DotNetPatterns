@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetPatterns.Builder", "D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetPatterns.NullObject", "DotNetPatterns.NullObject\DotNetPatterns.NullObject.csproj", "{BE7A383F-276C-4F45-94D2-C4B471FFA8C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetPatterns.Maybe", "DotNetPatterns.Maybe\DotNetPatterns.Maybe.csproj", "{DD438FE3-7584-401F-9F44-C250C8209B79}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BE7A383F-276C-4F45-94D2-C4B471FFA8C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE7A383F-276C-4F45-94D2-C4B471FFA8C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE7A383F-276C-4F45-94D2-C4B471FFA8C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD438FE3-7584-401F-9F44-C250C8209B79}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD438FE3-7584-401F-9F44-C250C8209B79}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD438FE3-7584-401F-9F44-C250C8209B79}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD438FE3-7584-401F-9F44-C250C8209B79}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
