@@ -7,12 +7,16 @@ namespace DotNetPatterns.Maybe
     {
         static void Main(string[] args)
         {
-            Maybe<string> maybe = "someString";
-            maybe.Do(content => Console.WriteLine(content));
-            
-            string str = null;
-            Maybe<string> maybeNull = str;
-            maybeNull.Do(content => Console.WriteLine($"No gonna happen : {content}"));
+            Maybe<string> str = "someString";
+
+            str = str.WhenSome(x => Console.WriteLine(x))
+                     .WhenNone(() => Console.WriteLine("Nothing in there"));
+
+            str = Maybe<string>.None();
+
+            str = str.WhenSome(x => Console.WriteLine(x))
+                     .WhenNone(() => Console.WriteLine("Nothing in there"));
+
         }
     }
 }
