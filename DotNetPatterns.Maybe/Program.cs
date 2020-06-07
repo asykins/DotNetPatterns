@@ -12,7 +12,7 @@ namespace DotNetPatterns.Maybe
             str = str.WhenSome(x => Console.WriteLine(x))
                      .WhenNone(() => Console.WriteLine("Nothing in there"));
 
-            str = Maybe<string>.None;
+            str = Maybe<string>.None();
 
             str = str.WhenSome(x => Console.WriteLine(x))
                      .WhenNone(() => Console.WriteLine("Nothing in there"));
