@@ -9,24 +9,39 @@ namespace DotNetPatterns.Maybe.MaybeStructure
 {
     public class Maybe<T> : IEnumerable<T>
     {
-        IEnumerable<T> Content;
+        private readonly IMaybeState<T> _maybeState;
 
-        private Maybe(IEnumerable<T> content)
+        readonly IEnumerable<T> Content;
+
+        private Maybe(IEnumerable<T> content, IMaybeState<T> maybeState)
         {
+            this._maybeState = maybeState;
             this.Content = content;
         }
 
         public static Maybe<T> Some(T content)
-            => new Maybe<T>(new T[] { content });
+            => new Maybe<T>(new T[] { content }, new Some<T>());
 
         public static Maybe<T> None()
-            => new Maybe<T>(new T[0]);
+            => new Maybe<T>(new T[0], new None<T>());
+
+        public Maybe<T> WhenSome(Action<T> action)
+        {
+            _maybeState.WhenSome(Content, action);
+            return this;
+        }
+
+        public Maybe<T> WhenNone(Action action)
+        {
+            _maybeState.WhenNone(action);
+            return this;
+        }
 
         public IEnumerator<T> GetEnumerator()
             => Content.GetEnumerator();
-
         IEnumerator IEnumerable.GetEnumerator()
             => GetEnumerator();
+        private bool HasSome() => Content.Any();
 
         public static implicit operator Maybe<T>(T content)
             => content == null ? None() : Some(content);
