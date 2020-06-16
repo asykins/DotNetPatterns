@@ -2,36 +2,27 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace DotNetPatterns.Repository.Repositories
 {
     public abstract class CsvRepository<T> : IRepository<T>
     {
-        public async Task<IEnumerable<T>> GetAll()
+        private readonly IEnumerable<T> Set;
+
+        public CsvRepository(string sourceFile)
         {
-            var queryResults = new List<T>();
-
-            var lines = await File.ReadAllLinesAsync("somePath", Encoding.UTF8);
-            var semiColonSeparatedLines = lines.Skip(1)
-                                               .Select(x => x.Split(";"));
-
-            semiColonSeparatedLines.ToList().ForEach(splittedLine => {
-                queryResults.Add(Map(splittedLine));
-            });
-
-            return queryResults;
+            this.Set = File.ReadAllLines(sourceFile)
+                                .Select(x => Map(x.Split(';')));
         }
 
-        public async Task<T> GetById(Guid id)
-        {
-            return Map((await File.ReadAllLinesAsync("somePath", Encoding.UTF8))
-                                  .Skip(1)
-                                  .Select(x => x.Split(";"))
-                                  .First(x => x[0] == id.ToString()));
-        }
+        public IEnumerable<T> AggregateWherePredicates
+            (IEnumerable<T> source, Expression<Func<T, bool>>[] predicates)
+            => predicates.Aggregate(source, (currentSource, predicate) => currentSource.Where(predicate.Compile()));
 
-        public abstract T Map(string[] splittedLine);
+        public IReadOnlyList<T> Find(params Expression<Func<T, bool>>[] predicates)
+            => AggregateWherePredicates(this.Set, predicates).ToList();
+
+        public abstract T Map(string[] splittedLines);
     }
 }
