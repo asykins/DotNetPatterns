@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DotNetPatterns.FluentTryCatchFinally.TryCatchFinally.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,15 +12,15 @@ namespace DotNetPatterns.FluentTryCatchFinally.TryCatchFinally
         private static Func<T, TResult> NullTry
             => (T content) => throw new ArgumentNullException(nameof(content));
 
-        public static Catcher<T, TResult> Try(T content, Func<T, TResult> tryFunc)
+        public static ICatcherOrRethrower<T, TResult> Try(T content, Func<T, TResult> tryFunc)
         {
             if(content == null)
             {
-                return new Catcher<T, TResult>(content, NullTry);
+                return new InitialCatcher<T, TResult>(content, NullTry);
             }
             else
             {
-                return new Catcher<T, TResult>(content, tryFunc);
+                return new InitialCatcher<T, TResult>(content, tryFunc);
             }
         }
     }

@@ -7,31 +7,14 @@ namespace DotNetPatterns.FluentTryCatchFinally
     {
         static void Main(string[] args)
         {
-            string str = "someString";
+            string nullStr = "somestring";
 
-            var result = Trier<string, string>.Try(str, x => x.Replace('s', 'S'))
-                            .Catch((x, exception) => {
-                                Console.WriteLine($"An error occured while processing {str} : {exception}");
-                                return str;
-                            })
-                            .Finally(x => Console.WriteLine("Cleaning up..."))
-                            .Execute();
+            var newTryCatchResult = Trier<string, string>.Try(nullStr, x => throw new Exception())
+                                        .Catch<ArgumentNullException>((x, exception) => Console.WriteLine("Bug"))
+                                        .Catch<Exception>((x, exception) => Console.WriteLine("Super Bug !"))
+                                        .Finally(x => Console.WriteLine("OK"))
+                                        .Execute();
 
-            Console.WriteLine(result);
-
-            Console.WriteLine("\n-----------------------------------------------------------------------------\n");
-
-            string nullStr = null;
-
-            var nullResult = Trier<string, string>.Try(nullStr, x => x.Replace('s', 'S'))
-                            .Catch((x, exception) => {
-                                Console.WriteLine($"An error occured while processing {str} : {exception}");
-                                return nullStr;
-                            })
-                            .Finally(x => Console.WriteLine("Cleaning up..."))
-                            .Execute();
-
-            Console.WriteLine(nullResult ?? "Value is null");
         }
     }
 }
