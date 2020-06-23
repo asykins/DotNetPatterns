@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetPatterns.ChainOfRepon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetPatterns.Repository", "DotNetPatterns.Repository\DotNetPatterns.Repository.csproj", "{3817FC01-AFAF-4520-99F5-40CCE3C4CDFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetPatterns.FluentTryCatchFinally", "DotNetPatterns.FluenTryCatchFinally\DotNetPatterns.FluentTryCatchFinally.csproj", "{B5153C6A-A013-40C6-B136-D31EEECD3E61}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetPatterns.FluentTryCatchFinally", "DotNetPatterns.FluentTryCatchFinally\DotNetPatterns.FluentTryCatchFinally.csproj", "{EB88C06F-7471-4815-A6EA-7143DD62BCEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,10 +53,10 @@ Global
 		{3817FC01-AFAF-4520-99F5-40CCE3C4CDFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3817FC01-AFAF-4520-99F5-40CCE3C4CDFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3817FC01-AFAF-4520-99F5-40CCE3C4CDFB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B5153C6A-A013-40C6-B136-D31EEECD3E61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B5153C6A-A013-40C6-B136-D31EEECD3E61}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B5153C6A-A013-40C6-B136-D31EEECD3E61}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B5153C6A-A013-40C6-B136-D31EEECD3E61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB88C06F-7471-4815-A6EA-7143DD62BCEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB88C06F-7471-4815-A6EA-7143DD62BCEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB88C06F-7471-4815-A6EA-7143DD62BCEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB88C06F-7471-4815-A6EA-7143DD62BCEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
