@@ -19,7 +19,7 @@ namespace DotNetPatterns.FluentTryCatchFinally.TryCatchFinally
 
         public IExecutableCatcher<T, TResult> Catch<ExceptionType>(Action<T, Exception> catchAction)
         {
-            _catchActions.Add(typeof(ExceptionType).Name, catchAction);
+            _catchActions.TryAdd(typeof(ExceptionType).Name, catchAction);
             return new ExecutableTryCatch<T, TResult>(this._content, this._tryFunc, this._catchActions);
         }
 
