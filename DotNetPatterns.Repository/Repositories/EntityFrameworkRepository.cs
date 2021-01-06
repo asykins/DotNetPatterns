@@ -18,7 +18,8 @@ namespace DotNetPatterns.Repository.Repositories
 
         private IQueryable<T> AggregateWhereExpressions
             (IQueryable<T> query, Expression<Func<T, bool>>[] predicates)
-            => predicates.Aggregate(query, (currentQuery, predicate) => currentQuery.Where(predicate));
+                => predicates.Aggregate(query, (currentQuery, predicate) 
+                    => currentQuery.Where(predicate));
 
         public IReadOnlyList<T> Find(params Expression<Func<T, bool>>[] predicates)
         {
