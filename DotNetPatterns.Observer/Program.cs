@@ -19,17 +19,19 @@ namespace DotNetPatterns.Observer
             var stringMessage = new Message { Content = "This is a string !", Type = "String", Id = Guid.NewGuid() };
             var binaryMessage = new Message { Content = "001010001111101010101011101010010111", Type = "Binary", Id = Guid.NewGuid() };
 
-
-            //5 messages should be displayed on the console
+            Console.WriteLine($"-- Sending String Message");
             subject.Notify(stringMessage);
+            Console.WriteLine($"-- Sending String Message");
             subject.Notify(stringMessage);
             stringObserver.Unsubscribe();
+            Console.WriteLine($"-- Sending String & Binary Message");
             subject.Notify(binaryMessage, stringMessage);
+            Console.WriteLine($"-- Sending Two Binary Message");
             subject.Notify(binaryMessage, binaryMessage);
             binaryObserver.Unsubscribe();
             subject.Notify(binaryMessage, binaryMessage);
+            Console.WriteLine($"-- Sending Two Binary Message");
 
-            
         }
     }
 }

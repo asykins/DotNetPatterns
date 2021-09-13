@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetPatterns.Repository",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetPatterns.Specification", "DotNetPatterns.Specification\DotNetPatterns.Specification.csproj", "{4F9B4317-ACAE-4B11-A9EA-6D5C5A863EE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetPatterns.Observer", "DotNetPatterns.Observer\DotNetPatterns.Observer.csproj", "{67251A45-0038-47A6-86AA-C05662D5DAD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetPatterns.Observer", "DotNetPatterns.Observer\DotNetPatterns.Observer.csproj", "{67251A45-0038-47A6-86AA-C05662D5DAD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetPatterns.Decorator", "DotNetPatterns.Decorator\DotNetPatterns.Decorator.csproj", "{874168FD-5C5D-4905-9768-ED37CF1C32CB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{67251A45-0038-47A6-86AA-C05662D5DAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67251A45-0038-47A6-86AA-C05662D5DAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67251A45-0038-47A6-86AA-C05662D5DAD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{874168FD-5C5D-4905-9768-ED37CF1C32CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{874168FD-5C5D-4905-9768-ED37CF1C32CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{874168FD-5C5D-4905-9768-ED37CF1C32CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{874168FD-5C5D-4905-9768-ED37CF1C32CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

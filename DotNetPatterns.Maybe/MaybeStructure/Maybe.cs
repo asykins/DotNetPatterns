@@ -41,7 +41,6 @@ namespace DotNetPatterns.Maybe.MaybeStructure
             => Content.GetEnumerator();
         IEnumerator IEnumerable.GetEnumerator()
             => GetEnumerator();
-        private bool HasSome() => Content.Any();
 
         public static implicit operator Maybe<T>(T content)
             => content == null ? None() : Some(content);
