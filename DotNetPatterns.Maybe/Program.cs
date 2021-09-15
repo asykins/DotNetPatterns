@@ -1,4 +1,4 @@
-﻿using DotNetPatterns.Maybe.MaybeStructure;
+﻿using DotNetPatterns.Maybe.Option;
 using System;
 
 namespace DotNetPatterns.Maybe
@@ -7,15 +7,24 @@ namespace DotNetPatterns.Maybe
     {
         static void Main(string[] args)
         {
-            Maybe<string> str = "someString";
+            Console.WriteLine("----------------------");
+            Console.WriteLine("String does not contain 'some'");
+            Console.WriteLine("----------------------");
 
-            str = str.WhenSome(x => Console.WriteLine(x))
-                     .WhenNone(() => Console.WriteLine("Nothing in there"));
 
-            str = Maybe<string>.None();
+            Option<string> option = "";
 
-            str = str.WhenSome(x => Console.WriteLine(x))
-                     .WhenNone(() => Console.WriteLine("Nothing in there"));
+            option.When(x => x.Contains("some"))
+                .Do(x => Console.WriteLine(x));
+
+            option = "some";
+
+            Console.WriteLine("----------------------");
+            Console.WriteLine("String contains 'some'");
+            Console.WriteLine("----------------------");
+
+            option.When(x => x.Contains("some"))
+                .Do(x => Console.WriteLine(x));
 
         }
     }
