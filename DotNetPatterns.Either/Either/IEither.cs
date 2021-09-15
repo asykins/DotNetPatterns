@@ -9,6 +9,8 @@ namespace DotNetPatterns.Either.Either
     public interface IEither<TLeft, TRight>
     {
         IEither<TLeft, TNewRight> Map<TNewRight>(Func<TRight, TNewRight> func);
-        TRight Reduce<TNewLeft>(Func<TLeft, TRight> func);
+        IEither<TLeft, TRight> Reduce(Func<TLeft, TRight> func, Func<TLeft, bool> predicate);
+        TRight Reduce(Func<TLeft, TRight> func);
+
     }
 }

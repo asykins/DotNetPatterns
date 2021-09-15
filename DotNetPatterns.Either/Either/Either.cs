@@ -10,7 +10,9 @@ namespace DotNetPatterns.Either.Either
     {
         public abstract IEither<TLeft, TNewRight> Map<TNewRight>(Func<TRight, TNewRight> func);
 
-        public abstract TRight Reduce<TNewLeft>(Func<TLeft, TRight> func);
+        public abstract TRight Reduce(Func<TLeft, TRight> func);
+
+        public abstract IEither<TLeft, TRight> Reduce(Func<TLeft, TRight> func, Func<TLeft, bool> predicate);
 
         public static implicit operator Either<TLeft, TRight>(TLeft left)
             => new Left<TLeft, TRight>(left);

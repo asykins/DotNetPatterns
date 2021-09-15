@@ -22,7 +22,7 @@ namespace DotNetPatterns.Either
         {
             Console.WriteLine(
               response.Map(x => x.ToLower())
-                .Reduce<string>(x => x.Message)
+                .Reduce(x => x.Message)
             );
         }
 
