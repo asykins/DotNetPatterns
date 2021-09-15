@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DotNetPatterns.Maybe.Option
 {
@@ -10,9 +7,7 @@ namespace DotNetPatterns.Maybe.Option
         protected readonly T[] contents;
 
         protected Option(T content)
-        {
-            contents = new T[] { content };
-        }
+            => (contents) = (new T[] { content });
 
         public abstract T Do(Action<T> action);
 

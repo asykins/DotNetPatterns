@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetPatterns.Decorator", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetPatterns.Strategy", "DotNetPatterns.Strategy\DotNetPatterns.Strategy.csproj", "{A04AA011-D516-49EC-BC39-6A46C5594DE4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetPatterns.Either", "DotNetPatterns.Either\DotNetPatterns.Either.csproj", "{23DA31DD-7A37-415F-AFA1-EB66D5A48C82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{A04AA011-D516-49EC-BC39-6A46C5594DE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A04AA011-D516-49EC-BC39-6A46C5594DE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A04AA011-D516-49EC-BC39-6A46C5594DE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23DA31DD-7A37-415F-AFA1-EB66D5A48C82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23DA31DD-7A37-415F-AFA1-EB66D5A48C82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23DA31DD-7A37-415F-AFA1-EB66D5A48C82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23DA31DD-7A37-415F-AFA1-EB66D5A48C82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
